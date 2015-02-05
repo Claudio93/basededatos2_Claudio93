@@ -3,6 +3,7 @@ dbms_output.put_line("mi PRIMER PROGRAMA DE PL SQL");
 END;
 /
 
+
 declare
 nombre varchar(80);
 edad integer;
