@@ -1,0 +1,36 @@
+
+create table usuario_xxx (id_usuario integer, edad integer);
+
+   create or replace trigger disparador_xxx before insert on usuario_xxx
+     for each row 
+     
+     begin  
+               if :new.edad <18 then 
+               raise_application_error (-20001,'lo siento eres un pequeño pervertido');
+               end if;
+               end;
+               /
+               
+               insert into usuario_xxx values(1,19);
+               
+               select * from usuario_xxx;
+               
+               
+EJERCICIO DOS --------------------
+create table trabajador (id_trabajador integer, nombre varchar2(120), sueldo float);
+  
+  insert into trabajador values (1, 'ana',400);
+  end;
+  
+  create  or replace trigger actulizar_trbajador before update on trebajador 
+  for each row 
+    begin 
+    :new.sueldo:= :old.sueldo+:new.sueldo;
+    end;
+    /
+  
+  update  trabajador set sueldo=3000 where id_trabajador=1;
+  
+  select * from trabajador;
+  
+  
